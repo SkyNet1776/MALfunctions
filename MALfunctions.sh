@@ -64,6 +64,8 @@ Logout() {
           curl -s "https://myanimelist.net/logout.php" -H "authority: myanimelist.net" -H "pragma: no-cache" -H "cache-control: no-cache" -H "origin: https://myanimelist.net" -H "upgrade-insecure-requests: 1" -H "dnt: 1" -H "content-type: application/x-www-form-urlencoded" -H "user-agent: $USERAGENT" -H "accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8" -H "referer: $REFERER" -H "accept-encoding: gzip, deflate, br" -H "accept-language: en-US,en;q=0.9" -H "cookie: $MALHLOGSESSID; MALSESSIONID=$MALSESSIONID; is_logged_in=1; _gat=1" --data "csrf_token=$CSRF_TOKEN" --compressed > /dev/null 2>&1
 
           LOGIN_STATUS="0"
+          
+          echo -e "\nLogged out... Probably."
 }
 
 NewComment(){
@@ -152,3 +154,5 @@ NewThread(){
 LoginStatus(){
 echo "Status: $LOGIN_STATUS"
 }
+
+
